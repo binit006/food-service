@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Signup Page</title>
+  <style>
+    /* Reset styling */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #f4f4f4;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      height: 100vh;
+    }
+
+    /* Navbar Styling */
+    nav {
+      background-color: #d27edd;
+      width: 100%;
+     
+      padding: 40px 0;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+      display: flex;
+      justify-content: space-around;
+      position: fixed;
+      top: 0;
+      left: 0;
+      z-index: 1;
+    }
+
+    nav ul {
+      list-style-type: none;
+      display: flex;
+      gap: 20px;
+    }
+
+    nav a {
+      text-decoration: none;
+      color: whitesmoke;
+      padding: 10px 20px;
+      border: 2px solid #3498db;
+      border-radius: 5px;
+      transition: color 0.3s ease, background-color 0.3s ease;
+    }
+
+    nav a:hover {
+      color: #fff;
+      background-color: #3498db;
+    }
+
+    /* Center Content */
+    .container {
+      margin-top: 150px; /* Space for fixed navbar */
+      text-align: center;
+    }
+
+    .container h1 {
+      color: #1c7303;
+      margin-bottom: 10px;
+    }
+
+    .tagline {
+      font-size: x-large;
+      color: aquamarine;
+      margin-bottom: 20px;
+    }
+
+    .signup-box {
+      background-color: #e6e6fa;
+      padding: 20px;
+      border-radius: 8px;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+      width: 300px;
+    }
+
+    label {
+      display: block;
+      margin-bottom: 8px;
+    }
+
+    input {
+      width: 100%;
+      padding: 8px;
+      margin-bottom: 16px;
+    }
+
+    button {
+      background-color: #4caf50;
+      color: #fff;
+      padding: 10px 15px;
+      border: none;
+      border-radius: 4px;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+    }
+
+    button:hover {
+      background-color: #45a049;
+    }
+
+    .background {
+      background-image: url("https://static.vecteezy.com/system/resources/previews/003/690/403/original/food-delivery-online-on-phone-orange-background-illustration-fastfood-design-concept-business-shop-promotion-transport-to-home-free-vector.jpg");
+      background-size: cover;
+      filter: blur(5px);
+      height: 100vh;
+      width: 100%;
+      position: fixed;
+      top: 0;
+      left: 0;
+      z-index: -1;
+    }
+  </style>
+</head>
+<body>
+  <!-- Background Image -->
+  <div class="background"></div>
+
+  <!-- Navbar Section -->
+  <nav>
+    <ul style="font-family: Georgia, 'Times New Roman', Times, serif;">
+      <li><a href="home.html">HOME</a></li>
+      <li><a href="menu1.html" target="_blank">MENU</a></li>
+      <li><a href="contact.html">CONTACT</a></li>
+      <li><a href="feedback.html" target="_blank">FEEDBACK</a></li>
+      
+      <li><a href="signup1.html" target="_blank">SIGNUP</a></li>
+      <li><a href="about.html" target="_blank">ABOUT US</a></li>
+    </ul>
+  </nav>
+
+  <!-- Main Content Container -->
+  <div class="container">
+    <h1>QUICK BITES</h1>
+    <p class="tagline">Savor Flavor, Swiftly Delivered</p>
+
+    <!-- Signup Form Section -->
+    <div class="signup-box">
+      <h1>Sign Up</h1>
+      <form id="signupForm">
+        <label for="firstName">First Name:</label>
+        <input type="text" id="firstName" name="firstName" required placeholder="Enter First Name">
+        
+        <label for="lastName">Last Name:</label>
+        <input type="text" id="lastName" name="lastName" required placeholder="Enter Last Name">
+        
+        <label for="email">Email ID:</label>
+        <input type="email" id="email" name="email" required placeholder="Enter Email ID">
+        
+        <label for="mobileNumber">Mobile Number:</label>
+        <input type="tel" id="mobileNumber" name="mobileNumber" required placeholder="Mobile Number">
+        
+        <label for="password">Password:</label>
+        <input type="password" id="password" name="password" required placeholder="Password">
+        
+        <label for="confirmPassword">confirm password:</label>
+        <input type="password" id="confirmPassword" name="confirmPassword" required placeholder="Retype Password">
+        
+        <button type="submit">Sign Up</button>
+      </form>
+    </div>
+  </div>
+
+  <script>
+    document.getElementById('signupForm').addEventListener('submit', function(event) {
+      event.preventDefault();
+
+      const firstName = document.getElementById('firstName').value.trim();
+      const lastName = document.getElementById('lastName').value.trim();
+      const email = document.getElementById('email').value.trim();
+      const mobileNumber = document.getElementById('mobileNumber').value.trim();
+      const password = document.getElementById('password').value;
+      const confirmPassword = document.getElementById('confirmPassword').value;
+
+      if (firstName === '' || lastName === '' || email === '' || mobileNumber === '' || password === '' || confirmPassword === '') {
+        alert('Please fill out all fields');
+        return;
+      }
+
+      if (!validateEmail(email)) {
+        alert('Please enter a valid email address');
+        return;
+      }
+
+      if (!/^\d{10}$/.test(mobileNumber)) {
+        alert('Please enter a valid 10-digit mobile number');
+        return;
+      }
+
+      if (password !== confirmPassword) {
+        alert('Passwords do not match');
+        return;
+      }
+
+      alert('Form submitted successfully!');
+      this.submit();
+    });
+
+    function validateEmail(email) {
+      const regex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+      return regex.test(email);
+    }
+  </script>
+</body>
+</html>
+

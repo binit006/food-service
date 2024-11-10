@@ -1,0 +1,258 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Us - Food Service</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        body {
+    font-family: 'Arial', sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f8f8f8;
+    line-height: 1.6;
+}
+
+.container {
+    background-color: #d27edd;
+    border-radius: 15px;
+    padding: 20px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+    transition: box-shadow 0.3s ease;
+    overflow: hidden;
+}
+
+.container:hover {
+    box-shadow: 0 0 20px rgb(0, 0, 0);
+}
+h1{
+    text-align: center;
+}
+
+nav {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 10px;
+}
+
+nav ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+}
+
+nav a {
+    text-decoration: none;
+    color: black;
+    margin-right: 20px;
+    position: relative;
+    transition: color 0.3s ease, box-shadow 0.3s ease, background-color 0.3s ease; 
+    display: inline-block;
+    padding: 10px 20px;
+    border: 2px solid #3498db; 
+    border-radius: 5px;
+}
+
+nav a::before {
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 2px;
+    bottom: 0;
+    left: 0;
+    background-color: #000;
+    visibility: hidden;
+    transform: scaleX(0);
+    transition: all 0.3s ease-in-out 0s;
+}
+
+nav a:hover {
+    color: #fff; 
+    box-shadow: 0 0 10px rgba(0, 0, 255, 0.5); 
+    background-color: #3498db; 
+}
+
+nav a:hover::before {
+    visibility: visible;
+    transform: scaleX(1);
+}
+#about-us, #team {
+    max-width: 800px;
+    margin: 50px auto;
+    padding: 20px;
+    background-color: #ffffff;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    border-radius: 10px;
+    text-align: center;
+}
+
+h1, h2 {
+    color: #333;
+    margin-bottom: 20px;
+}
+
+p {
+    color: #555;
+    margin-bottom: 15px;
+}
+
+button {
+    background-color: #e67e22;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+button:hover {
+    background-color: #d35400;
+}
+
+.hidden {
+    display: none;
+}
+
+.team-member {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 30px;
+}
+
+.team-photo {
+    border-radius: 50%;
+    width: 150px;
+    height: 150px;
+    object-fit: cover;
+    margin-bottom: 10px;
+}
+
+h3 {
+    margin: 10px 0 5px;
+    color: #333;
+}
+
+#new{
+    background-color: aqua;
+    display: flex;
+    justify-content: space-evenly;
+    margin-top: 0%;
+    height: 50px;
+    padding-top: 30px;
+    
+}
+
+
+.why-choose-us {
+    background-color: #f4f4f4;
+    padding: 2em;
+    text-align: center;
+}
+
+.why-choose-us h2 {
+    font-size: 2em;
+    margin-bottom: 1em;
+}
+
+.why-choose-us ul {
+    list-style: none;
+    padding: 0;
+    font-size: 1.2em;
+    color: #555;
+}
+
+.why-choose-us ul li {
+    margin-bottom: 0.5em;
+}
+
+
+footer {
+      background-color: #33a6b8;
+    }
+    </style>
+</head>
+<body>
+    <div class="container" id="titlebar">
+        <h1 style="color: #1c7303;">QUICK BITES</h1>
+        <q style="font-size: x-large; margin:500px; color: aquamarine;">Savor Flavor, Swiftly Delivered</q>
+        <nav>
+            <ul style="font-family: Georgia, 'Times New Roman', Times, serif; ">
+                <li><a style="color: whitesmoke;" href="home.html">HOME</a></li>
+                <li><a style="color: whitesmoke;" href="menu1.html" target="_blank">MENU</a></li>
+                <li><a style="color: whitesmoke;" href="contact.html">CONTACT</a></li>
+                <li><a style="color: whitesmoke;" href="feedback.html" target="_blank">FEEDBACK</a></li>
+            </ul>
+            
+            <ul style="font-family: Georgia, 'Times New Roman', Times, serif;">
+                
+                <li><a style="color: whitesmoke;" href="signup1.html" target="_blank">SIGNUP</a></li>
+                <li><a style="color: whitesmoke;" href="about.html" target="_blank">ABOUT US</a></li>
+            </ul>
+        </nav>
+    </div>
+    <section id="about-us">
+        <h1>About Us</h1>
+        <p>Welcome to [Quick Bites] We are passionate about bringing you delicious, freshly prepared dishes made from the highest quality ingredients.</p>
+        <p>Founded in [2000], we pride ourselves on our commitment to sustainability, using locally sourced and seasonal ingredients whenever possible.</p>
+        <button onclick="showMore()">Learn More</button>
+        <p id="extra-info" class="hidden">Our mission is to provide not only tasty food but an unforgettable dining experience. Join us and taste the difference!</p>
+    </section>
+
+    <section id="team">
+        <h2>Meet Our Team</h2>
+        <div class="team-member">
+            <img src="Vikas-Khanna.jpg" alt="Chef John Doe" class="team-photo">
+            <h3>Chef Vikas Khanna</h3>
+            <p>Head Chef with 15 years of experience in fine dining, specializing in Mediterranean and fusion cuisine.</p>
+        </div>
+        <div class="team-member">
+            <img src="Ranveer-Brar.jpg" alt="Chef Jane Smith" class="team-photo">
+            <h3>Chef Ranveer Brar</h3>
+            <p>is renowned for his kebab recipes and  biryani recipes</p>
+        </div>
+        <div class="team-member">
+            <img src="chef john doe.jpg" alt="Jhon Doe" class="team-photo">
+            <h3>Chef Jhon Doe</h3>
+            <p>  is renowned for his specializing in Mediterranean and fusion cuisine</p>
+        </div>
+        
+    <section class="why-choose-us">
+        <h2>Why Choose Us?</h2>
+        <ul>
+            <li>high-quality food offerings</li>
+           
+            <li>Affordable prices</li>
+            <li>Customer-focused services</li>
+            <li>Secure online transactions</li>
+            <li>Fast and reliable Delivery</li>
+        </ul>
+    </section>
+
+
+       
+    </section>
+    <footer>
+        email:@infotech@gmail.com    
+            <address> address:lpu,punjab</address> 
+            contact:+916299899772
+
+    </footer>
+       <script>
+        function showMore() {
+    const extraInfo = document.getElementById('extra-info');
+    if (extraInfo.classList.contains('hidden')) {
+        extraInfo.classList.remove('hidden');
+    } else {
+        extraInfo.classList.add('hidden');
+    }
+}
+       </script> 
+
+    <script src="script.js"></script>
+</body>
+</html>

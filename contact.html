@@ -1,0 +1,292 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Food service</title>
+    
+     <style>
+        * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+    padding: 20px;
+    line-height: 1.6;
+}
+
+.container {
+    background-color:#d27edd;
+    border-radius: 15px;
+    padding: 20px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+    transition: box-shadow 0.3s ease;
+    overflow: hidden;
+}
+
+.container:hover {
+    box-shadow: 0 0 20px rgb(0, 0, 0);
+}
+h1{
+    text-align: center;
+}
+
+nav {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 10px;
+}
+
+nav ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+}
+
+nav a {
+    text-decoration: none;
+    color: black;
+    margin-right: 20px;
+    position: relative;
+    transition: color 0.3s ease, box-shadow 0.3s ease, background-color 0.3s ease; /* Add transition for color, box-shadow, and background-color change */
+    display: inline-block;
+    padding: 10px 20px;
+    border: 2px solid #3498db; /* Light blue color for the border */
+    border-radius: 5px;
+}
+
+nav a::before {
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 2px;
+    bottom: 0;
+    left: 0;
+    background-color: #000;
+    visibility: hidden;
+    transform: scaleX(0);
+    transition: all 0.3s ease-in-out 0s;
+}
+
+nav a:hover {
+    color: #fff; /* Change text color to white on hover */
+    box-shadow: 0 0 10px rgba(0, 0, 255, 0.5); /* Add a glow effect on hover */
+    background-color: #3498db; /* Light blue color on hover */
+}
+
+nav a:hover::before {
+    visibility: visible;
+    transform: scaleX(1);
+}
+h1{
+    text-align: center;
+    padding:0 ;
+}
+
+
+
+h1 {
+    color: #00796b;
+}
+
+p {
+    color: #555;
+}
+#contact {
+    background-color: rgb(255, 255, 255);
+    padding: 40px;
+    border-radius: 15px;
+    margin-top: 20px;
+    
+    background-size: cover;
+    background-image: url("https://images.unsplash.com/photo-1596524430615-b46475ddff6e?q=80&w=1000&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8Y29udGFjdCUyMHVzfGVufDB8fDB8fHww");
+}
+
+
+.contact-info, .map, .contact-form {
+    max-width: 600px;
+    margin: 20px auto;
+    background: #fff;
+    padding: 20px;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.contact-info h2, .map h2, .contact-form h2 {
+    margin-bottom: 10px;
+    color: #00796b;
+}
+
+.contact-info p, .contact-info a {
+    font-size: 1.1em;
+    color: #333;
+}
+
+
+
+.map iframe {
+    width: 100%;
+    border: 0;
+    border-radius: 5px;
+}
+
+.form-group {
+    margin-bottom: 15px;
+}
+
+.form-group label {
+    display: block;
+    font-weight: bold;
+    margin-bottom: 5px;
+}
+
+.form-group input,
+.form-group textarea {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+button {
+    display: block;
+    width: 100%;
+    padding: 10px;
+    background-color: #00796b;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #004d40;
+}
+
+footer {
+    background-color:#33a6b8 ;
+    text-align: center;
+    margin-top: 40px;
+}
+
+#old{
+    display: flex
+}
+     </style>
+</head>
+<body>
+    <div class="container" id="titlebar">
+        <h1 style="color: #1c7303;">QUICK BITES</h1>
+        <q style="font-size: x-large; margin:480px; color: aquamarine;">Savor Flavor, Swiftly Delivered</q>
+        <nav>
+            <ul style="font-family: Georgia, 'Times New Roman', Times, serif; ">
+                <li><a style="color: whitesmoke;" href="home.html">HOME</a></li>
+                <li><a style="color: whitesmoke;" href="menu.html" target="_blank">MENU</a></li>
+                <li><a style="color: whitesmoke;" href="contact.html">CONTACT</a></li>
+                <li><a style="color: whitesmoke;" href="feedback.html" target="_blank">FEEDBACK</a></li>
+            </ul>
+            
+            <ul style="font-family: Georgia, 'Times New Roman', Times, serif;">
+                
+                <li><a style="color: whitesmoke;" href="signup1.html" target="_blank">SIGNUP</a></li>
+                <li><a style="color: whitesmoke;" href="about.html" target="_blank">ABOUT US</a></li>
+            </ul>
+        </nav>
+    </div>
+
+  
+
+   
+<div id="old">
+    <section class="contact-info">
+        <h2>Contact Information</h2>
+        <p>Phone no: 6299899772</p>
+        <p>Email: <a href="quickbite12@gmail.com">quickbite12@gmail.com</a></p>
+        <p>Address: Lpu, phagwara</p>
+    </section>
+
+    <section class="map">
+        <h2>Our Location</h2>
+        <iframe
+            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3410.748074314803!2d75.70229287388572!3d31.25539666018858!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x391a5f5e9c489cf3%3A0x4049a5409d53c300!2sLovely%20Professional%20University!5e0!3m2!1sen!2sin!4v1730140391080!5m2!1sen!2sin" 
+            width="100%" height="300" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+    </section></div>
+    <section class="contact-form">
+        <h2>Contact Form</h2>
+        <form id="contactForm">
+            <div class="form-group">
+                <label for="firstname">Firstname</label>
+                <input type="text" id="firstname" name="firstname" required>
+            </div>
+            <div class="form-group">
+                <label for="lastname">Lastname</label>
+                <input type="text" id="lastname" name="lastname" required>
+            </div>
+            
+            
+            </div>
+            <div class="form-group">
+                <label for="email">Email Address</label>
+                <input type="email" id="email" name="email" required>
+            </div>
+            <div class="form-group">
+                <label for="phone">Phone Number</label>
+                <input type="text" id="phone" name="phone">
+            </div>
+            <div class="form-group">
+                <label for="message">Your Message</label>
+                <textarea id="message" name="message" required></textarea>
+            </div>
+            <button type="submit">Submit</button>
+        </form>
+    </section>
+
+    <footer>
+       follow us: <a href="#"></a><img src="instagram.jpg"height="20" width="20" alt="no photo"></a>
+       follow us: <a href="#"><img src="youtube.jpg" height="20" width="20" alt="no photo"></a>
+    </footer>
+        <script>
+            document.addEventListener("DOMContentLoaded", function() {
+    const form = document.getElementById("contactForm");
+
+    form.addEventListener("submit", function(event) {
+        event.preventDefault();
+
+        
+        const firstname = document.getElementById("firstname").value.trim();
+        const lastname = document.getElementById("lastname").value.trim();
+        const email = document.getElementById("email").value.trim();
+        const phone = document.getElementById("phone").value.trim();
+        const message = document.getElementById("message").value.trim();
+
+        if (firstname === "" || lastname === "" || email === "" || message === "") {
+            alert("Please fill in all required fields.");
+            return;
+        }
+
+        
+        const emailPattern = /^[^ ]+@[^ ]+\.[a-z]{2,6}$/;
+        if (!emailPattern.test(email)) {
+            alert("Please enter a valid email address.");
+            return;
+        }
+
+        
+        alert("Thank you for contacting us! We will get back to you soon.");
+
+       
+        form.reset();
+    });
+});
+        </script>
+
+    
+</body>
+</html>
